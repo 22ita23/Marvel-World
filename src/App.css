@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;*/
+  --font-inconsolata: "Inconsolata", monospace;
+  --color-primary: white;
+  --color-primary-dark: #2d3497;
+  --color-secondary: #074eb1;
+  --color-secondary-dark: #cdcde2;
+}
+
+body {
+  font-family: var(--font-inconsolata);
+  background-color: var(--color-primary);
+}
+
+.app {
+  padding: 0.5rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.25rem;
+  letter-spacing: 0.9px;
+  background: var(--color-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar {
+  display: flex;
+}
+.search {
+  width: 71%;
+  margin: 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b9d3ff;
+  border-radius: 2px;
+  background: var(--color-primary);
+  padding: 0.25rem 0 0.25rem;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  font-size: 0.85rem;
+  font-family: var(--font-inconsolata);
+  font-weight: 500;
+  padding-right: 1rem;
+  outline: none;
+  color: var(--color-secondary);
+  background: var(--color-primary);
+}
+.search input[placeholder] {
+  color: var(--color-secondary);
+  opacity: 40%;
+}
+.search button {
+  margin: none;
+  cursor: pointer;
+  opacity: 40%;
+  color: var(--color-secondary);
+  font-family: var(--font-inconsolata);
+  background-color: var(--color-secondary-dark);
+  margin:0 4px 0 0;
+}
+
+.empty {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty h2 {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  font-family: var(--font-inconsolata);
+}
+
+.container {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 210px;
+  height: 300px;
+  margin: 1.5rem;
+
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.movie div:nth-of-type(1) {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.movie:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.movie div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.movie div:nth-of-type(2) img {
+  height: 100%;
+  width: 100%;
+}
+
+.movie div:nth-of-type(3) {
+  z-index: 2;
+  background-color: var(--color-primary-dark);
+  top: 70%;
+  padding-left: 14px;
+  padding-top: 14mpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.movie div:nth-of-type(3) span {
+  font-family: var(--font-inconsolata);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.movie div:nth-of-type(3) h3 {
+  margin-top: 5px;
+  font-family: var(--font-inconsolata);
+  color: var(--color-primary);
+}
+.movie:hover div:nth-of-type(3) h3,
+span {
+  color: var(--color-primary-dark);
+}
+.movie:hover div:nth-of-type(3) span {
+  color: var(--color-secondary);
+}
+
+.movie:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.movie:hover div:nth-of-type(3) {
+  background-color: transparent;
+}
+
+.movie:hover div:nth-of-type(1) {
+  opacity: 1;
+  color: var(--color-secondary);
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 4rem 2rem;
+  }
+
+  .search {
+    padding: 0.2rem 0.2rem;
+    width: 100%;
+  }
+
+  .search input {
+    font-size: 0.85rem;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 0.5rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 0.85rem;
+  }
+
+  .container {
+    margin-top: 1rem;
+  }
+
+  .movie {
+    width: "100%";
+    margin: 0.5rem;
+  }
+}
